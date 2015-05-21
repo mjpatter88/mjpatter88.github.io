@@ -1,4 +1,4 @@
-<a href="http://www.mjpatter88.github.io">mjpatter88.github.io</a>
+<a href="http://mjpatter88.github.io">mjpatter88.github.io</a>
 ====================
 
 My personal website on GitHub Pages.
