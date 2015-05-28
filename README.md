@@ -4,7 +4,7 @@
 My personal website on GitHub Pages.
 
 
-Using the "Pure" CSS framework: http://purecss.io/.
+Might use the "Pure" CSS framework: http://purecss.io/.
 
 
 A helpful resourece on github markdown:
