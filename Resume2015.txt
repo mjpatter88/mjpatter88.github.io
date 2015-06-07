@@ -1,0 +1,41 @@
+Michael Patterson
+Mjpatter88@gmail.com --- 319-560-3701
+Portfolio: http://mjpatter88.github.io
+Recent Code: https://github.com/mjpatter88
+LinkedIn: http://www.linkedin.com/in/mjpatter88
+
+Education:
+Iowa State University Ames, Iowa
+Major: Computer Engineering
+Spring 2013 - Masters of Science Degree with Thesis: 3.86 GPA
+Spring 2011 - Bachelors of Science Degree: 3.91 GPA
+
+Cedar Valley Christian High-School Cedar Rapids, Iowa
+GPA: 4.35/4.0
+ACT: 36/36
+National Merit Scholar
+
+Work Experience:
+Rockwell Collins – Summers 2006-1010 Cedar Rapids, Iowa
+As a technical intern, I developed and tested software for satellite communication systems.
+I set up and maintained hardware in specific testing configurations,
+generated detailed testing documentation and cross-linked it to requirements using DOORS,
+and wrote software to automatically generate Python test scripts based on a user's input.
+
+Research at Iowa State University – 2010-2013 Ames, Iowa
+As both an undergraduate and a graduate researcher, I surveyed the current research in the hardware security field.
+I worked with the GNU Radio and the USRP to investigate electromagnetic emissions from keyboards,
+developed and tested Physically Uncloneable Functions (PUFs) in VHDL, and discovered several
+vulnerabilities in modern GPUs. View my M.S. Thesis at http://lib.dr.iastate.edu/etd/13115/.
+
+Teaching at Iowa State University – 2010-2013 Ames, Iowa
+As an undergraduate teaching assistant, I taught two semesters of “Advanced Programming in C and C++.”
+As a graduate teaching assistant, I taught three semesters of assembly programming and processor design/implementation in VHDL
+for a “Computer Organization and Assembly Level Programming” class.
+
+CRU – 2014-2015 Orlando, Florida
+I've traveled to 12 different countries, taught English and basic health/sanitation,
+partnered with indigenous organizations, and recorded tribal language versions of the Bible.
+
+Computer Skills: C, Java, Python, C#, C++, VHDL, Web Development (HTML, CSS, JS, PHP),
+CUDA, ASM, Windows, Linux, Visual Studio, gcc/make, SVN, Git, Vim.
