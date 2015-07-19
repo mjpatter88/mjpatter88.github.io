@@ -1,2 +1,6 @@
 1) "The most challenging part of programming is conceptualizing the problem." - Code Complete p.12
 	Use Project Rosalind - Problem IPRB.py(Mendel's First Law) as an example of this.
+
+2) The Project Rosalind PROT.py(Translasting RNA into Protein) problem helped me learn
+   the utility of Python's zip and map functions. It reinforced the utility of list/dict comprehensions.
+   Step through this program, starting with basic for loops and ending with my solution. 
