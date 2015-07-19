@@ -1,0 +1,2 @@
+1) "The most challenging part of programming is conceptualizing the problem." - Code Complete p.12
+	Use Project Rosalind - Problem IPRB.py(Mendel's First Law) as an example of this.
