@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Chip 8 Emulation using C++ and SDL2</title>
+    
+    <!-- sunlight.js Syntaxt Highlighting -->
+    <link rel="stylesheet" type="text/css" href="../../include/sunlight-1.22.0/themes/sunlight.default.css" />
+    <script type="text/javascript" src="../../include/sunlight-1.22.0/sunlight-min.js"></script>
+    <script type="text/javascript" src="../../include/sunlight-1.22.0/lang/sunlight.cpp-min.js"></script>
+
+</head>
+
+<body>
+
+    <h1>Chip 8 Emulation using C++ and SDL</h1>
+    <h5>September 2015</h5>
+    <h2>Goal: Create a fully-functioning Chip 8 emulator that runs in both Windows and Linux environments.</h2>
+    
+    What is Chip 8?
+    <br><br>
+    Why Chip 8?
+    <br><br>
+    What's Next?
+    <br><br>
+    Why both Windows and Linux?
+    
+    <div>
+        <h3>Step 1: Development Environment and Hello World</h3>
+        <div>
+            First things first, we need to configure our development environments and verify that they are working as expected.
+            This project could be completed using a variety of toolchains and technologies, but we're going to be using the C++
+            programming language with Visual Studio on Windows and GCC on Linux. We'll be using the SDL library to handle input
+            and graphics. If you already have Visual Studio and GCC installed and configured, skip ahead to Step 2.
+        </div>
+        <div>
+            <br><b>Windows:</b><br>
+            1) Download Visual Studio from <a href="https://www.visualstudio.com/">www.visualstudio.com</a>.
+            I'll be using the Visual Studio 2015 Community Edition since it is free and does everything we need it to.
+            The installation process is lengthy, but fairly straightforward.
+            
+            Make sure to select "Custom" for the installation type: <br><img src="images/vs_installer.png"><br>
+            Then place a checkmark next to the option to install "Common Tools for Visual C++ 2015.": <br><img src="images/vs_installer2.png"><br>
+            <br>
+            
+            2) Once the installation completes, open up Visual Studio. Create a new project, select the "Empty Project" template,
+            and name it "Hello World". Select the "Source Files" folder in the Solution Explorer, and press "Ctrl-Shift-a" to add a new item.
+            Add a "C++ File" and name it whatever you'd like, I named mine "Main.cpp". Type in the following code for a basic program:
+            
+            <pre class="sunlight-highlight-cpp">
+#include &lt;iostream&gt;
+
+int main(int argc, char* argv[])
+{
+	std::cout << "Hello World!" << std::endl;
+
+	// Wait for user input. We only do this to keep the cmd window visible.
+	int tmp;
+	std::cin >> tmp;		
+}
+            </pre>
+            
+            3) Press "F5" to build and execute your program. 
+            If you see something like the image below, you have a working Windows development environment.
+            If you get an error or some other output, start by doing some research on Google. If you still can't get it to work, leave a comment.
+            <img src="images/HelloWorld.png"><br><br>
+        </div>
+        
+        <div>
+            <b>Linux:</b><br>
+            1) Coming soon...
+        </div>
+    </div>
+    
+    <div>
+        <h3>Step 2: Configure SDL2</h3>
+        <div>
+            We'll be using the SDL library to handle input and graphics. If you already have SDL2 installed and configured, skip ahead to Step 3.
+        </div>
+        <div>
+            <br><b>Windows:</b><br>
+            1) Download the latest version of SDL2 from <a href="http://libsdl.org/download-2.0.php">http://libsdl.org/download-2.0.php</a>.
+            I'll be using version 2.0.3. Make sure to click the download link under the "Development Libraries" header. 
+            We want the Windows version for Visual C++. In my case, the link is listed as "SDL2-devel-2.0.3-VC.zip (Visual C++ 32/64-bit)".
+            <br>
+            Once this download completes, extract the archive. You should see a folder titled "SDL2-2.0.3" but corresponding to the version you downloaded.
+            Take this folder, and put it somewhere that is easy to find. In my case, I placed the folder in "C:\vs_dev_lib".
+            <br><br>
+            
+            2) Open Visual Studio and create a new empty project. I called mine "SDL_HelloWorld", but you can name it whatever you'd like. 
+            Add a new C++ file called Main.cpp and type the following single line of code:
+            <pre class="sunlight-highlight-cpp">
+#include &lt;SDL.h&gt;
+            </pre>
+            Now right click on the word "SDL.h" and select "Open Document &lt;SDL.h&gt;" from the context menu. You should see the following:
+            <br><img src="images/SDL_NotFound.png"><br>
+            Visual Studio can't find the header files that we just downloaded in the previous step. Let's fix this! Close the error message,
+            select "Project->SDL_HelloWorld Properties...", and then click on the "VC++ Directories" option in the left column. In the central pane,
+            find and click on the "Include Directories" row, as shown below.
+            <br><img src="images/IncludeDirectories.png"><br>
+            Click on the small arrow to the far right of this row and then click on the word "Edit" that drops down. In the new dialog box, click
+            on the icon towards the upper-right that looks like the "New-Folder" icon. It should say "New Line" when you hover your mouse over it.
+            Click the browse button (it has three dots on it) on the right side of the dropdown, and browse to the SDL folder you previously
+            downloaded. You want to select the "include" directory from within the SDL2.2.0.3 folder. The result should look like the following:
+            <br><img src="images/IncludeDirectoryAdded.png"><br>
+            Click "Ok" to return to the "SDL_HelloWorld Property Pages" window then click "Ok" again. Back in your code, again right-click on
+            the word "SDL.h" and select "Open Document &lt;SDL.h&gt;" from the context menu. This time, rather than getting an error, you should
+            see the "SDL.h" file open. Feel free to browse through the contents, but for now we don't need to understand what is going on.
+            
+            <br><br>
+            3) Now we need to tell Visual Studio where to find the SDL2 library files. Like the last step, go to "Project->SDL_HelloWorld Properties...",
+            and then click on the "VC++ Directories" option in the left column. This time select "Library Directories" in the central pane. 
+            Click on the small arrow to the far right of this row and then click on the word "Edit" that drops down. In the new dialog box, click
+            on the icon towards the upper-right that looks like the "New-Folder" icon. It should say "New Line" when you hover your mouse over it.
+            Click the browse button (it has three dots on it) on the right side of the dropdown, and browse to the SDL folder you previously
+            downloaded. This time you want to double-click on the "lib" folder and select the "x86" folder from inside it. (Note: Even if you have a
+            64-bit OS, as most people do, you still probably want to select the x86 folder.) The result should look like the following:
+            <br><img src="images/LibraryDirectories.png"><br>
+            Click "Ok" to return to the Project Properties window.
+            
+            <br><br>
+            4) We told Visual Studio how to find the SDL2 library files, but now we need to tell it to link against these files. 
+            In the same project properties window that is still open from the previous step, click the arrow next to "Linker" in the right column.
+            Next select "Input" from the list of options under the "Linker" heading and select "Additional Dependencies" in the central pane.
+            Click on the small arrow to the far right of this row and then click on the word "Edit" that drops down. Now type in the words 
+            "SDL2.lib" and "SDL2main.lib" on separate lines. The result should look like the following:
+            <br><img src="images/AdditionalDependencies.png"><br>
+            Click "Ok" to return to the Project Properties window.
+            
+            <br><br>
+            5) Now we need to tell Visual Studio what type of application we want to create. In our case, we want console output, so we want to generate
+            a console application not a Windows application. In the same project properties window that is still open from the previous step, 
+            click the arrow next to "Linker" in the right column. Next select "System" from the list of options under the "Linker" heading and 
+            select "SubSystem" in the central pane. Click the small arrow to the far right of this row and then select "Console (/SUBSYSTEM:CONSOLE)" 
+            from the list of options that drops down. The result should look like the following:
+            <br><img src="images/SubSystem.png"><br>
+            Click "Ok" to exit the Project Properties window.
+            
+            <br><br>
+            6) Finally, we need to put the SDL2.dll file in a place where Visual Studio can find it. You can either put it in your project directory,
+            or you can put it in a special Windows folder. We'll do the former, so we don't clutter up the system files. Find the SDL2-2.0.3 folder from
+            earlier and go to "lib\x86". For me, the path is "C:\vs_dev_lib\SDL2-2.0.3\lib\x86". Copy the "SDL2.dll" file and paste it into the project 
+            directory. In my case, this is "C:\Users\Michael\Documents\Visual Studio 2015\Projects\SDL_HelloWorld\SDL_HelloWorld". Your project directory
+            is the folder where the .vcxxproj file is.
+            
+            <br><br>
+            7) After all of this, Visual Studio is finally ready to build and execute an SDL2 program! Let's write a super simple one and try to build it.
+            Enter the following:
+            <pre class="sunlight-highlight-cpp">
+#include &lt;SDL.h&gt;
+
+int main(int argc, char* argv[])
+{
+	return 0;
+}
+            </pre>
+            Hit F5, and... Error:(
+            <br><img src="images/LinkError.png"><br>
+            Now, this is where many people would give up. We would conclude that we messed something up, and the cryptic error messagees would scare us away.
+            We don't know how Visual Studio's Linker works, and all we want to do is get a simple graphical display working so we can emulate some super
+            old hardware.
+            
+            However, this time we aren't going to give up. So how do we start? Well, Google can sometimes be helpful, let's try that...
+            <a href="https://www.google.com/search?q=sdl2+visual+studio+2015+unresolved+external+symbol">Google</a> a few keywords and we get some helpful
+            looking links to StackOverflow.
+            
+            
+            Start Here: use this link http://stackoverflow.com/questions/30412951/unresolved-external-symbol-imp-fprintf-and-imp-iob-func-sdl2 and compile
+            from source using VS2015.
+            
+        </div>
+        <br><br>
+        <div>
+            <b>Linux:</b><br>
+            1) Coming soon...
+        </div>
+    </div>
+
+    <!-- sunlight.js Syntaxt Highlighting -->    
+    <script type="text/javascript">
+    Sunlight.highlightAll();
+    </script>
+
+</body>
+
+</html>
