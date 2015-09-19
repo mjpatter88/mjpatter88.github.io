@@ -1,3 +1,9 @@
+Paso - Step by step, intermediate -> advanced programming series
+Chip8 - Series on how to develop a Chip8 emulator. (Should I move SDL article out of here?)
+
+
+Misc:
+
 1) "The most challenging part of programming is conceptualizing the problem." - Code Complete p.12
 	Use Project Rosalind - Problem IPRB.py(Mendel's First Law) as an example of this.
 
