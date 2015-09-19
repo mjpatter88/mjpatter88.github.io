@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Chip 8 Emulation using C++ and SDL2</title>
+    
+    <!-- sunlight.js Syntaxt Highlighting -->
+    <link rel="stylesheet" type="text/css" href="../../include/sunlight-1.22.0/themes/sunlight.default.css" />
+    <script type="text/javascript" src="../../include/sunlight-1.22.0/sunlight-min.js"></script>
+    <script type="text/javascript" src="../../include/sunlight-1.22.0/lang/sunlight.cpp-min.js"></script>
+
+</head>
+
+<body>
+
+    <h1>Chip 8 Emulation using C++ and SDL</h1>
+    <h5>September 2015</h5>
+    
+    <div>
+        <h3>Part 1: Development Environment and Hello World</h3>
+        <div>
+            First things first, we need to configure our development environments and verify that they are working as expected.
+            This project could be completed using a variety of toolchains and technologies, but we're going to be using the C++
+            programming language with Visual Studio on Windows and GCC on Linux. We'll be using the SDL library to handle input
+            and graphics. If you already have Visual Studio and GCC installed and configured, skip ahead to Step 2.
+        </div>
+        <div>
+            <br><b>Windows: Setting up Visual Studio 2015 for C++ development on Windows 10</b><br>
+            1) Download Visual Studio from <a href="https://www.visualstudio.com/">www.visualstudio.com</a>.
+            I'll be using the Visual Studio 2015 Community Edition since it is free and does everything we need it to.
+            The installation process is lengthy, but fairly straightforward.
+            
+            Make sure to select "Custom" for the installation type: <br><img src="images/vs_installer.png"><br>
+            Then place a checkmark next to the option to install "Common Tools for Visual C++ 2015.": <br><img src="images/vs_installer2.png"><br>
+            <br>
+            
+            2) Once the installation completes, open up Visual Studio. Create a new project, select the "Empty Project" template,
+            and name it "Hello World". Select the "Source Files" folder in the Solution Explorer, and press "Ctrl-Shift-a" to add a new item.
+            Add a "C++ File" and name it whatever you'd like, I named mine "Main.cpp". Type in the following code for a basic program:
+            
+            <pre class="sunlight-highlight-cpp">
+#include &lt;iostream&gt;
+
+int main(int argc, char* argv[])
+{
+	std::cout << "Hello World!" << std::endl;
+
+	// Wait for user input. We only do this to keep the cmd window visible.
+	int tmp;
+	std::cin >> tmp;		
+}
+            </pre>
+            
+            3) Press "F5" to build and execute your program. 
+            If you see something like the image below, you have a working Windows development environment.
+            If you get an error or some other output, start by doing some research on Google. If you still can't get it to work, leave a comment.
+            <br><img src="images/HelloWorld.png"><br><br>
+        </div>
+        
+        <div>
+            <b>Linux:</b><br>
+            1) Coming soon...
+        </div>
+    </div>
+
+    <!-- sunlight.js Syntaxt Highlighting -->    
+    <script type="text/javascript">
+    Sunlight.highlightAll();
+    </script>
+
+</body>
+
+</html>
