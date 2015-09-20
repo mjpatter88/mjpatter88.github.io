@@ -10,3 +10,6 @@ Misc:
 2) The Project Rosalind PROT.py(Translasting RNA into Protein) problem helped me learn
    the utility of Python's zip and map functions. It reinforced the utility of list/dict comprehensions.
    Step through this program, starting with basic for loops and ending with my solution. 
+
+3) The Project Rosalind LCSM.py(Finding the longest Motif) problem forced me to learn and apply
+   the "Generalized Suffix Tree" algorithm to efficiently find the longest substring.
