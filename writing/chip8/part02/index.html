@@ -277,7 +277,22 @@ int main(int argc, char* argv[])
             Press F5 to build, and you should see the following:
             <br><img src="images/GreenScreen.png"><br>
             Success!! After all that work, we've managed to draw a green window on the screen. It may not seem like much, but we've overcome several
-            roadblocks and are now ready to start work on our actual emulator.  
+            roadblocks and are now ready to start work on our actual emulator.
+            
+            <br><b>Common Problems:</b><br>
+                <ol>
+                    <li>
+                        If you continue to get linker errors, first go back and double check that you have set up your project correctly and placed the
+                        SDL2.dll in the correct location. If you're confident that everything is correctly configured, next make sure that you have defined
+                        "main" in the standard way:
+                        <pre class="sunlight-highlight-cpp">
+int main(int argc, char* argv[])
+                        </pre>
+                        If you have different parameters to your main function, you'll get the following linker error:
+                        <br><img src="images/MainError.png"><br>
+                    </li>
+                </ol>
+            <br><br>
         </div>
         <br><br>
         <div>
